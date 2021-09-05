@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background-color: aliceblue;
+}
+
+i{
+    font-size: 1.5rem;
+    margin: 5px;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.headLogo {
+    z-index: 1;
+    position: relative;
+}

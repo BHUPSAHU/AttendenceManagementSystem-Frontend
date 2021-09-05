@@ -1,0 +1,21 @@
+<section id="nav-section">
+    <nav class="navbar navbar-expand-sm  navbar-light" style="background-color: #00ff55;">
+      <a class="navbar-brand headLogo" href="#"><img src="assets/images/logo.png" alt="Logo" width="80"></a>
+      <span style="font-size:x-large;">Attendance Management</span>
+      
+    <section class="ml-auto row">
+    <img class="border rounded-circle " src="{{user.profilePic}}" height="50">
+    <div id="nav-profile" class="dropdown col">
+      <!-- <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+        Dropdown button
+      </button> -->
+      <span class="pointer" data-toggle="dropdown"(mouseenter)="optionToggle=!optionToggle" (mouseleave) ="optionToggle=!optionToggle">{{user.name}}<i class="bi bi-gear" *ngIf="optionToggle"></i><i class="bi bi-gear-fill" *ngIf="!optionToggle"></i></span>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Profile</a>
+        <a class="dropdown-item" href="#">Settings</a>
+        <a class="dropdown-item" href="#">Logout</a>
+      </div>
+    </div>
+    </section>
+    </nav>
+  </section>
