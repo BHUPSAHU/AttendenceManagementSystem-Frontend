@@ -12,6 +12,13 @@ import { HeaderComponent } from './elements/header/header.component';
 import { FooterComponent } from './elements/footer/footer.component';
 import { MidBodyComponent } from './elements/mid-body/mid-body.component';
 import { SubMenuComponent } from './elements/sub-menu/sub-menu.component';
+import { SubjectCreateComponent } from './subject/subject-create/subject-create.component';
+import { SubjectListComponent } from './subject/subject-list/subject-list.component';
+import { SubjectUpdateComponent } from './subject/subject-update/subject-update.component';
+import { SubjectByIdComponent } from './subject/subject-by-id/subject-by-id.component';
+import { CourseCreateComponent } from './course/course-create/course-create.component';
+import { CourseListComponent } from './course/course-list/course-list.component';
+import { CourseUpdateComponent } from './course/course-update/course-update.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +29,14 @@ import { SubMenuComponent } from './elements/sub-menu/sub-menu.component';
     HeaderComponent,
     FooterComponent,
     MidBodyComponent,
-    SubMenuComponent
+    SubMenuComponent,
+    SubjectCreateComponent,
+    SubjectListComponent,
+    SubjectUpdateComponent,
+    SubjectByIdComponent,
+    CourseCreateComponent,
+    CourseListComponent,
+    CourseUpdateComponent
   ],
   imports: [
     BrowserModule,
