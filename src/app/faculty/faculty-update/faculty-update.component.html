@@ -1,0 +1,32 @@
+<h3>Update Faculty</h3>
+
+<form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="name">Facultyid</label>
+        <input type="text" class="form-control" id="facultyId" required [(ngModel)]="faculty.facultyid" name="facultyid">
+      </div>
+  
+      <div class="form-group">
+        <label for="name">UserName</label>
+        <input type="text" class="form-control" id="userName" required [(ngModel)]="faculty.userName" name="userName">
+      </div>
+      <div class="form-group">
+        <label for="name">TotalClass</label>
+        <input type="text" class="form-control" id="totalClass" required [(ngModel)]="faculty.totalClass" name="totalClass">
+      </div>
+      <!-- <div class="form-group">
+          <label for="name">SubjectList</label>
+          <input type="text" class="form-control" id="subjectList" required [(ngModel)]="faculty.subjectId" name="subjectList">
+       </div> -->
+      
+     
+      
+      <button style='margin-right:16px' class="btn btn-success">Submit</button>
+      <button style='margin-right:16px' (click)="list()" class="btn btn-success">Back to Faculty</button>
+
+
+</form>
+
+
+
+

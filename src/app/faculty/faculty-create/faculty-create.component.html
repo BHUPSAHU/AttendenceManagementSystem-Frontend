@@ -1,0 +1,30 @@
+
+<h3>Add Faculty</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+      <label for="name">FacultyId</label>
+      <input type="text" class="form-control" id="facultyId" required [(ngModel)]="faculty.facultyid" name="facultyId">
+    </div>
+
+    <div class="form-group">
+      <label for="name">UserName</label>
+      <input type="text" class="form-control" id="userName" required [(ngModel)]="faculty.userName" name="userName">
+    </div>
+    <div class="form-group">
+      <label for="name">TotalClasses</label>
+      <input type="text" class="form-control" id="totalClass" required [(ngModel)]="faculty.totalClass" name="totalClass">
+    </div>
+    <!-- <div class="form-group">
+        <label for="name">SubjectList</label>
+        <input type="text" class="form-control" id="subjectList" required [(ngModel)]="faculty.subjectId" name="subjectList">
+      </div>
+     -->
+    
+
+    <button class="btn btn-success">AddFaculty</button>
+  </form>
+</div>
+
+

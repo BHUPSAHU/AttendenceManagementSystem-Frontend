@@ -10,6 +10,11 @@ import { HeaderComponent } from './elements/header/header.component';
 import { FooterComponent } from './elements/footer/footer.component';
 import { MidBodyComponent } from './elements/mid-body/mid-body.component';
 import { SubMenuComponent } from './elements/sub-menu/sub-menu.component';
+import { FacultyCreateComponent } from './faculty/faculty-create/faculty-create.component';
+import { FacultyListComponent } from './faculty/faculty-list/faculty-list.component';
+import { FacultyUpdateComponent } from './faculty/faculty-update/faculty-update.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,11 +25,17 @@ import { SubMenuComponent } from './elements/sub-menu/sub-menu.component';
     HeaderComponent,
     FooterComponent,
     MidBodyComponent,
-    SubMenuComponent
+    SubMenuComponent,
+    FacultyCreateComponent,
+    FacultyListComponent,
+    FacultyUpdateComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

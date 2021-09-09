@@ -1,0 +1,29 @@
+
+<h5>Faculty List</h5>
+<section>
+    <div class="container-fluid ">
+        <table id="example" class="table table-striped table-bordered table-sm row-border hover" cellspacing="0" width="100%">
+            <thead>
+    <tr>
+        <th>facultyid</th>
+        <th>UserName</th>
+        <th>TotalClass</th>
+        <!-- <th>SubjectList</th>    -->
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let temp of facultys" >
+       <td>{{temp.facultyid}}</td>
+        <td>{{temp.userName}}</td>
+        <td>{{temp.totalClass}}</td>
+        <!-- <td>{{item.subject.subjectName}}</td> -->
+        
+        <td><button style='margin-right:16px' (click)="deleteFaculty(temp.facultyid)" class="btn btn-danger">Delete</button>
+            <button style='margin-right:16px' (click)="updateFaculty(temp.facultyid)" class="btn btn-success" style="margin-left: 10px">Update</button>
+          </td>
+    </tr>
+</tbody>
+</table>
+</div>
+</section>
+  
