@@ -6,12 +6,12 @@
     <div class="col-sm">
       <div class="form-group custom-Forms">
       <label for="subjectname">Subject Name:</label>
-      <input type="text" class="form-control" [(ngModel)]="subject.subjectName" id="subjectname" placeholder="Enter Subject Name" name="subjectname">
+      <input type="text"  required max=30 min=2 class="form-control" [(ngModel)]="subject.subjectName" id="subjectname" placeholder="Enter Subject Name" name="subjectname">
     </div>
 
     <div class="form-group custom-Forms">
       <label for="sid">Subject Code:</label>
-      <input type="text" class="form-control" [(ngModel)]="subject.subjectCode" id="scode" placeholder="Enter Subject Id" name="scode">
+      <input type="text" class="form-control" [(ngModel)]="subject.subjectCode" id="scode" placeholder="Enter Subject Id" name="scode" required>
     </div>
 
   <div class="form-group custom-Forms">

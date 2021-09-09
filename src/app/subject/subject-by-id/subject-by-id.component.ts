@@ -5,8 +5,6 @@ import { Course } from 'src/app/models/course';
 import { Subject } from 'src/app/models/subject';
 import { HttpSubjectClientService } from 'src/app/services/http-subject-client.service';
 
-
-
 @Component({
   selector: 'app-subject-by-id',
   templateUrl: './subject-by-id.component.html',
