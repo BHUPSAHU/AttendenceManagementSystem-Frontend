@@ -1,0 +1,42 @@
+<h3>Update User</h3>
+<div [hidden]="submitted" style="width: 400px;">
+
+    <form (ngSubmit)="onSubmit()"  >
+        <div class="form-group" >
+            <label for="firstName">FirstName</label>
+            <input type="text" class="form-control" id="firstName" required [(ngModel)]="user.firstName" name="firstName">
+        </div>
+        <div class="form-group">
+            <label for="lastName">LastName</label>
+            <input type="text" class="form-control" id="lastName" required [(ngModel)]="user.lastName" name="lastName">            
+        </div>
+        <div class="form-group">
+            <label for="mobileNo">MobileNo
+            </label>
+                <input type="number" class="form-control" min="10" max="10" required [(ngModel)]="user.mobileNo" name="mobileNo" id="number">
+          
+        </div>
+        <div class="form-group">
+            <label for="profilePic">ProfilePic
+            </label>
+                <input type="url" class="form-control" required [(ngModel)]="user.profilePic" name="profilePic" id="profilePic">
+        </div>
+        <div class="form-group">
+            <label for="dob">Date Of Birth
+            </label>
+                <input type="date" class="form-control" required [(ngModel)]="user.dob" name="dob" id="dob">
+        </div>
+        <div class="form-group">
+            <label for="password">Password
+            </label>
+                <input type="password" class="form-control" required [(ngModel)]="user.password" name="password" id="password">
+        </div>
+        <!-- <div class="form-group">
+            <label for="facultyNumber">
+                <input type="number" required [(ngModel)]="user.roleType" name="roleType" id="roleType">
+            </label>
+        </div> -->
+        <button class="btn btn-success">Update User</button>
+        
+    </form>
+</div>

@@ -5,4 +5,5 @@ export class Course
         public courseName:string,
        public description:string
     ){}
+   
 }

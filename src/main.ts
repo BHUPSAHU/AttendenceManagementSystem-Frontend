@@ -10,6 +10,3 @@ if (environment.production) {
 
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
-
-
-var logoPath = "assets/images/sprint2.png";

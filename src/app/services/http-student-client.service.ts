@@ -32,10 +32,8 @@ export class HttpStudentClientService {
     return this.httpClient.post<Student>( `${this.baseUrl}add`,student);
   }
 
-  public updateStudent
-  (student:Student):Observable<Student>{
+  public updateStudent(student:Student):Observable<Student>{
     return this.httpClient.put<Student>( `${this.baseUrl}update`,student);
   }
 
 }
-
