@@ -12,6 +12,8 @@ import { HeaderComponent } from './elements/header/header.component';
 import { FooterComponent } from './elements/footer/footer.component';
 import { MidBodyComponent } from './elements/mid-body/mid-body.component';
 import { SubMenuComponent } from './elements/sub-menu/sub-menu.component';
+import { StudentLoginComponent } from './student/student-login/student-login.component';
+import { StudentProfileComponent } from './student/student-profile/student-profile.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { SubMenuComponent } from './elements/sub-menu/sub-menu.component';
     HeaderComponent,
     FooterComponent,
     MidBodyComponent,
-    SubMenuComponent
+    SubMenuComponent,
+    StudentLoginComponent,
+    StudentProfileComponent
   ],
   imports: [
     BrowserModule,
