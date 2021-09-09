@@ -15,6 +15,8 @@ import { SubMenuComponent } from './elements/sub-menu/sub-menu.component';
 import { AttendanceCreateComponent } from './attendance/attendance-create/attendance-create.component';
 import { AttendanceListComponent } from './attendance/attendance-list/attendance-list.component';
 import { AttendanceUpdateComponent } from './attendance/attendance-update/attendance-update.component';
+import { StudentLoginComponent } from './student/student-login/student-login.component';
+import { StudentProfileComponent } from './student/student-profile/student-profile.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { AttendanceUpdateComponent } from './attendance/attendance-update/attend
     AttendanceListComponent,
     AttendanceUpdateComponent,
     
+    StudentLoginComponent,
+    StudentProfileComponent
   ],
   imports: [
     BrowserModule,
