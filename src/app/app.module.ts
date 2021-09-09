@@ -12,6 +12,9 @@ import { HeaderComponent } from './elements/header/header.component';
 import { FooterComponent } from './elements/footer/footer.component';
 import { MidBodyComponent } from './elements/mid-body/mid-body.component';
 import { SubMenuComponent } from './elements/sub-menu/sub-menu.component';
+import { AttendanceCreateComponent } from './attendance/attendance-create/attendance-create.component';
+import { AttendanceListComponent } from './attendance/attendance-list/attendance-list.component';
+import { AttendanceUpdateComponent } from './attendance/attendance-update/attendance-update.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,11 @@ import { SubMenuComponent } from './elements/sub-menu/sub-menu.component';
     HeaderComponent,
     FooterComponent,
     MidBodyComponent,
-    SubMenuComponent
+    SubMenuComponent,
+    AttendanceCreateComponent,
+    AttendanceListComponent,
+    AttendanceUpdateComponent,
+    
   ],
   imports: [
     BrowserModule,
