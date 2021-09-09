@@ -1,0 +1,35 @@
+<h5>Attendance List</h5>
+<section>
+    <div class="container-fluid ">
+        <table id="example" class="table table-striped table-bordered table-sm row-border hover" cellspacing="0" width="100%">
+            <thead>
+              <tr>
+                <th >Id</th>
+                <th >Student Id</th>
+                <th>Student Name</th>   
+                <th>Semester</th>
+                <th>SubjectName</th>
+                <th >Course Name</th>
+                <th >Status</th>
+                <th>Percentage</th>
+                <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of attendances">
+                <td>{{item.attendanceId}}</td>
+                <td>{{item.student.studentId}}</td>
+                <td>{{item.student.name}}</td>
+                <td>{{item.semester}}</td>
+                <td>{{item.subjectName}}</td> 
+                <td>{{item.courseName}}</td>
+                <td>{{item.status}}</td>
+                <td>{{item.percentage}}</td>           
+                  <td><button style='margin-right:16px' (click)="attendanceDelete(item.attendanceId)" class="btn btn-danger">Delete</button>
+                    <button style='margin-right:16px' (click)="attendanceUpdate(item.attendanceId)" class="btn btn-success" style="margin-left: 10px">Update</button>
+                  </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</section>
