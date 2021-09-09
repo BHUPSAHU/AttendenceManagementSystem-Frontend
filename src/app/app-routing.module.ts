@@ -8,6 +8,10 @@ import { StudentCreateComponent } from './student/student-create/student-create.
 import { StudentListComponent } from './student/student-list/student-list.component';
 import { StudentUpdateComponent } from './student/student-update/student-update.component';
 
+import { CourseCreateComponent } from './course/course-create/course-create.component';
+import { CourseListComponent } from './course/course-list/course-list.component';
+import { CourseUpdateComponent } from './course/course-update/course-update.component';
+
 const routes: Routes = [
   {path:"student/add" , component:StudentCreateComponent},
   {path:"student/list" , component:StudentListComponent},
@@ -15,6 +19,9 @@ const routes: Routes = [
   {path:"attendance/add" , component:AttendanceCreateComponent},
   {path:"attendance/list" , component:AttendanceListComponent},
   {path:"attendance/update/:id" , component:AttendanceUpdateComponent},
+  {path:"course/add" , component:CourseCreateComponent},
+  {path:"course/list" , component:CourseListComponent},
+  {path:"course/update/:id" , component:CourseUpdateComponent}
     
 ];
 
