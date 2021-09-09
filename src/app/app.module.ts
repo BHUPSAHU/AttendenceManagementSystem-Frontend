@@ -12,6 +12,9 @@ import { HeaderComponent } from './elements/header/header.component';
 import { FooterComponent } from './elements/footer/footer.component';
 import { MidBodyComponent } from './elements/mid-body/mid-body.component';
 import { SubMenuComponent } from './elements/sub-menu/sub-menu.component';
+import { UpdateUserComponent } from './user/update-user/update-user.component';
+import { UserListComponent } from './user/user-list/user-list.component';
+import { CreateUserComponent } from './user/create-user/create-user.component';
 
 @NgModule({
   declarations: [
@@ -19,17 +22,21 @@ import { SubMenuComponent } from './elements/sub-menu/sub-menu.component';
     StudentCreateComponent,
     StudentListComponent,
     StudentUpdateComponent,
+    CreateUserComponent,
+    UpdateUserComponent,
+    UserListComponent,
     HeaderComponent,
     FooterComponent,
     MidBodyComponent,
-    SubMenuComponent
+    SubMenuComponent,     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
