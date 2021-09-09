@@ -16,6 +16,11 @@ import { SubjectCreateComponent } from './subject/subject-create/subject-create.
 import { SubjectListComponent } from './subject/subject-list/subject-list.component';
 import { SubjectUpdateComponent } from './subject/subject-update/subject-update.component';
 import { SubjectByIdComponent } from './subject/subject-by-id/subject-by-id.component';
+import { AttendanceCreateComponent } from './attendance/attendance-create/attendance-create.component';
+import { AttendanceListComponent } from './attendance/attendance-list/attendance-list.component';
+import { AttendanceUpdateComponent } from './attendance/attendance-update/attendance-update.component';
+import { StudentLoginComponent } from './student/student-login/student-login.component';
+import { StudentProfileComponent } from './student/student-profile/student-profile.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +36,12 @@ import { SubjectByIdComponent } from './subject/subject-by-id/subject-by-id.comp
     SubjectListComponent,
     SubjectUpdateComponent,
     SubjectByIdComponent,
+    AttendanceCreateComponent,
+    AttendanceListComponent,
+    AttendanceUpdateComponent,
+    
+    StudentLoginComponent,
+    StudentProfileComponent
   ],
   imports: [
     BrowserModule,
