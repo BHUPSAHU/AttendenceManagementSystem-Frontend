@@ -25,12 +25,14 @@ export class SubjectListComponent implements OnInit {
   ngOnInit(): void
   
   {
+    
     this.subjectObs=this.service.getSubject();
     this.subjectObs.subscribe(data=>{
       this.subjects=data;
     });
   }
-
+  p:any;
+  data:any=[];
   
   deleteSubject(id:number):void{
     this.findSubjectObs=this.service.getSubjectById(id)

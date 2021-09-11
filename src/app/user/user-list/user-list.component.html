@@ -13,7 +13,8 @@
                 <th>Actions</th>
             </thead>
             <tbody >
-                <tr *ngFor="let user of users">
+                <tr *ngFor="let user of users |paginate: 
+                { itemsPerPage: 4, currentPage: p}">
                     <td>{{user.userId}}</td>
                     <td>{{user.firstName}}</td>
                     <td>{{user.lastName}}</td>
@@ -23,6 +24,11 @@
                         <button class="btn btn-success" (click)="updateUser(user.userId)" style="margin-left: 10px;">Update</button>
                     </td>
                 </tr>
+                <tr>
+                    <td colspan="8" style="text-align: center;" > <pagination-controls  
+               (pageChange)="p = $event">
+               </pagination-controls> </td>
+               </tr> 
             </tbody>
         </table>
     </div>

@@ -16,7 +16,8 @@
                 </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let item of attendances">
+              <tr *ngFor="let item of attendances|paginate: 
+              { itemsPerPage: 4, currentPage: p }">
                 <td>{{item.attendanceId}}</td>
                 <td>{{item.student.studentId}}</td>
                 <td>{{item.student.name}}</td>
@@ -29,6 +30,11 @@
                     <button style='margin-right:16px' (click)="attendanceUpdate(item.attendanceId)" class="btn btn-success" style="margin-left: 10px">Update</button>
                   </td>
               </tr>
+              <tr>
+                <td colspan="8" style="text-align: center;" > <pagination-controls  
+           (pageChange)="p = $event">
+           </pagination-controls> </td>
+           </tr> 
             </tbody>
           </table>
     </div>

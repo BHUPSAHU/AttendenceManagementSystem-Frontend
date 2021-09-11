@@ -32,7 +32,9 @@ export class FacultyListComponent implements OnInit {
       this.facultys = data;
     });
   }
-
+  p:any;
+  data:any=[];
+  
   deleteFaculty(id:number):void{
     // this.findFacultyObs=this.httpClientService.getFacultyById(id)
     // this.findFacultyObs.subscribe(data=>{

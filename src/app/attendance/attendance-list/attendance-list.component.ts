@@ -30,6 +30,9 @@ export class AttendanceListComponent implements OnInit {
       this.attendances = data;
     });
   }
+  p:any;
+  data:any=[];
+  
   attendanceDelete(id:number):void{
     this.findAttendanceObs=this.httpClientService.attendanceById(id)
     this.findAttendanceObs.subscribe(data=>{

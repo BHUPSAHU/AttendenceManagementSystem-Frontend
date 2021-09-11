@@ -11,9 +11,11 @@ import { Course } from 'src/app/models/course';
   templateUrl: './subject-create.component.html',
   styleUrls: ['./subject-create.component.css']
 })
-export class SubjectCreateComponent implements OnInit {
+export class SubjectCreateComponent implements OnInit 
+{
   
   constructor(private service:HttpSubjectClientService,private router:Router) { }
+  
   submitted:boolean=false;
   course:Course=new Course(0,"","");
   subject:Subject=new Subject(0,"","","","",0,this.course);
@@ -25,8 +27,6 @@ export class SubjectCreateComponent implements OnInit {
   onSubmit() 
   {
     this.submitted = true;
-    this.subject.subjectId=101;
-    this.subject.subjectName ="Java";
     this.subject.course.courseId=this.subject.courseId;
     console.log(this.subject);
     this.subjectOb =this.service.createSubject(this.subject);

@@ -21,7 +21,9 @@ export class UserListComponent implements OnInit {
     this.obsuser.subscribe(data=>this.users=data);
 
   }
-
+  p:any;
+  data:any=[];
+  
   getUserList():void{
     this.obsuser=this.userservice.getuserList();
     this.obsuser.subscribe(data=>this.users=data,error=>console.log(error));

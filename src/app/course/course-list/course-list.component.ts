@@ -31,7 +31,9 @@ export class CourseListComponent implements OnInit {
       this.courses = data;
     });
   }
-
+  p:any;
+  data:any=[];
+  
   deleteCourse(id:number):void{
     this.findCourseObs=this.httpClientService.getCourseById(id)
     this.findCourseObs.subscribe(data=>{

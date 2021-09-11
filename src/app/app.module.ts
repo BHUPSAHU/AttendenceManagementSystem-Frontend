@@ -31,6 +31,8 @@ import { AttendanceUpdateComponent } from './attendance/attendance-update/attend
 import { StudentLoginComponent } from './student/student-login/student-login.component';
 import { StudentProfileComponent } from './student/student-profile/student-profile.component';
 
+import {NgxPaginationModule} from 'ngx-pagination';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,9 +59,9 @@ import { StudentProfileComponent } from './student/student-profile/student-profi
     AttendanceCreateComponent,
     AttendanceListComponent,
     AttendanceUpdateComponent,
-    
     StudentLoginComponent,
-    StudentProfileComponent
+    StudentProfileComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -68,6 +70,8 @@ import { StudentProfileComponent } from './student/student-profile/student-profi
     HttpClientModule,
     ReactiveFormsModule,
   
+    NgxPaginationModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

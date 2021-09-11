@@ -12,7 +12,8 @@
     </tr>
 </thead>
 <tbody>
-    <tr *ngFor="let temp of facultys" >
+    <tr *ngFor="let temp of facultys|paginate: 
+    { itemsPerPage: 4, currentPage: p}" >
        <td>{{temp.facultyid}}</td>
         <td>{{temp.userName}}</td>
         <td>{{temp.totalClass}}</td>
@@ -22,6 +23,11 @@
             <button style='margin-right:16px' (click)="updateFaculty(temp.facultyid)" class="btn btn-success" style="margin-left: 10px">Update</button>
           </td>
     </tr>
+    <tr>
+        <td colspan="8" style="text-align: center;" > <pagination-controls  
+   (pageChange)="p = $event">
+   </pagination-controls> </td>
+   </tr> 
 </tbody>
 </table>
 </div>

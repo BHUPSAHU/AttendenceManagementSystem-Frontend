@@ -12,14 +12,20 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let c of courses">
+      <tr *ngFor="let c of courses|paginate: 
+      { itemsPerPage: 4, currentPage: p}">
         <td>{{c.courseId}}</td>
         <td>{{c.courseName}}</td>
         <td>{{c.description}}</td>
         
         <td><button type="submit" class="btn btn-success" (click)="updateCourse(c.courseId)">Update</button></td>
         <td><button type="submit" class="btn btn-danger" (click)="deleteCourse(c.courseId)">Delete</button></td>
-      </tr>   
+      </tr>  
+      <tr>
+        <td colspan="8" style="text-align: center;" > <pagination-controls  
+   (pageChange)="p = $event">
+   </pagination-controls> </td>
+   </tr>  
     </tbody>
   </table>
 </div>

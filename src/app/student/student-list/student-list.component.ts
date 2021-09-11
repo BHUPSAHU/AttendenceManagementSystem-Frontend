@@ -29,6 +29,9 @@ export class StudentListComponent implements OnInit {
     });
   }
 
+  p:any;
+  data:any=[];
+  
   deleteStudent(id:number):void{
     this.findStudentObs=this.httpClientService.getStudentById(id)
     this.findStudentObs.subscribe(data=>{

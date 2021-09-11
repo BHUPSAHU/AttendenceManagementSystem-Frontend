@@ -1,9 +1,9 @@
 
-<div class="input-group" style="width: 50%; margin-left: 250px;">
+<!-- <div class="input-group" style="width: 50%; margin-left: 250px;">
   <input type="search" class="form-control rounded" placeholder="Enter Subject Id" name="sid" [(ngModel)]="id" aria-label="Search"
     aria-describedby="search-addon" />
   <button type="button" class="btn btn-outline-primary" (click)="subjectById(id)">search</button>
-</div>
+</div> -->
 
 <div class="container" style="margin-top: 20px;">
  
@@ -20,7 +20,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let s of subjects">
+      <tr *ngFor="let s of subjects |paginate: 
+      { itemsPerPage: 4, currentPage: p }">
         <td>{{s.subjectId}}</td>
         <td>{{s.subjectName}}</td>
         <td>{{s.subjectCode}}</td>
@@ -29,7 +30,15 @@
         <td>{{s.description}}</td>
         <td><button type="submit" class="btn btn-success" (click)="updateSubject(s.subjectId)">Update</button></td>
         <td><button type="submit" class="btn btn-danger" (click)="deleteSubject(s.subjectId)">Delete</button></td>
-      </tr>   
+      </tr>
+      <tr>
+     <td colspan="8" style="text-align: center;"> <pagination-controls 
+(pageChange)="p = $event" 
+>
+</pagination-controls> </td>
+</tr> 
+
+  
     </tbody>
   </table>
 </div>
