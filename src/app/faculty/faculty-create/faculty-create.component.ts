@@ -13,7 +13,8 @@ import { HttpFacultyClientService } from 'src/app/services/http-faculty-client.s
 })
 export class FacultyCreateComponent implements OnInit {
 
- 
+  temp!:number;
+  courseArr:number[]=[];
   submitted:boolean=false;
   course:Course=new Course(0,"","");
   subject:Subject=new Subject(0,"","","","",0,this.course);
@@ -56,6 +57,31 @@ export class FacultyCreateComponent implements OnInit {
     form.classList.add('was-validated');
   }
 
+  counter(i:number){
+    return new Array(i);
+  }
+
+  addToArray(){
+    this.courseArr[this.courseArr.length] = this.temp;
+    this.courseArr = this.unique()
+  }
+
+  removeFromArray(index:number){
+  this.courseArr = this.courseArr.filter(obj => obj !== this.courseArr[index]);
+
+  }
+
+
+  unique(){
+    var unique: number[] =[];
+    for(let i=0;i<this.courseArr.length;i++){
+      var current =this.courseArr[i];
+      if(unique.indexOf(current)<0){
+          unique.push(current);
+      }
+    }
+    return unique
+  }
 }
 
 
