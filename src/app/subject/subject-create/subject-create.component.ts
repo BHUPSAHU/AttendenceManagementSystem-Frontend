@@ -21,7 +21,7 @@ export class SubjectCreateComponent implements OnInit
   courses:Course[]=[];
   course:Course=new Course(0,"","");
   courseOb:Observable<Course[]>=new Observable<Course[]>();
-
+  descLen = 0;
   subject:Subject=new Subject(0,"","","","",0,this.course);
   // addSubjectForm :FormGroup=new FormGroup({});
   subjectOb:Observable<Subject>=new Observable<Subject>();
@@ -46,5 +46,22 @@ export class SubjectCreateComponent implements OnInit
       alert("Subject Added Successfully.")
     })
     this.router.navigate(['/subject/list']);
+  }
+  
+  validate(event :Event){
+    var form = document.getElementsByClassName('needs-validation')[0] as HTMLFormElement;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    form.classList.add('was-validated');
+  }
+
+  checkcount(){
+    this.descLen = this.subject.description.length;
+  }
+
+  counter(i :number){
+    return new Array(i);
   }
 }

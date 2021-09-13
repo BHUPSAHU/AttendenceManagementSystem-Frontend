@@ -22,6 +22,7 @@ export class SubjectUpdateComponent implements OnInit
   subject :Subject = new Subject(0,"","","","",0,this.course);
   subjectOb : Observable<Subject> = new Observable<Subject>();
   sid:string =''
+  descLen: number =0;
   constructor(private service:HttpSubjectClientService,private route: ActivatedRoute,private router:Router,private serviceCourse:HttpCourseClientService) { }
 
   ngOnInit(): void
@@ -53,5 +54,22 @@ export class SubjectUpdateComponent implements OnInit
 
   list(){
     this.router.navigate(['subject/list']);
+  }
+
+  validate(event :Event){
+    var form = document.getElementsByClassName('needs-validation')[0] as HTMLFormElement;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    form.classList.add('was-validated');
+  }
+
+  checkcount(){
+    this.descLen = this.subject.description.length;
+  }
+
+  counter(i :number){
+    return new Array(i);
   }
 }

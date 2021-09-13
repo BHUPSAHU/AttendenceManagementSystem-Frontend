@@ -1,31 +1,28 @@
 <h3>Update Faculty</h3>
 
-<form (ngSubmit)="onSubmit()">
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()" class="needs-validation">
+    
     <div class="form-group">
-        <label for="name">Facultyid</label>
-        <input type="text" class="form-control" id="facultyId" required [(ngModel)]="faculty.facultyid" name="facultyid">
+      <label for="name">UserName</label>
+      <input type="text" class="form-control" id="userName" required [(ngModel)]="faculty.userName" name="userName" pattern=".{3,10}">
+      <div class="valid-feedback">Valid .</div>
+                <div class="invalid-feedback">Invalid input - must be between 3 to 10 characters </div>
+    </div>
+    <div class="form-group">
+      <label for="name">TotalClasses</label>
+      <input type="text" class="form-control" id="totalClass" required [(ngModel)]="faculty.totalClass" name="totalClass" pattern=".{3,10}">
+      <div class="valid-feedback">Valid .</div>
+      <div class="invalid-feedback">Invalid input - must be between 3 to 10 characters </div>
+    </div>
+    <!-- <div class="form-group">
+        <label for="name">SubjectList</label>
+        <input type="text" class="form-control" id="subjectList" required [(ngModel)]="faculty.subjectId" name="subjectList">
       </div>
-  
-      <div class="form-group">
-        <label for="name">UserName</label>
-        <input type="text" class="form-control" id="userName" required [(ngModel)]="faculty.userName" name="userName">
-      </div>
-      <div class="form-group">
-        <label for="name">TotalClass</label>
-        <input type="text" class="form-control" id="totalClass" required [(ngModel)]="faculty.totalClass" name="totalClass">
-      </div>
-      <!-- <div class="form-group">
-          <label for="name">SubjectList</label>
-          <input type="text" class="form-control" id="subjectList" required [(ngModel)]="faculty.subjectId" name="subjectList">
-       </div> -->
-      
-     
-      
-      <button style='margin-right:16px' class="btn btn-success">Submit</button>
-      <button style='margin-right:16px' (click)="list()" class="btn btn-success">Back to Faculty</button>
-
-
-</form>
+     -->
+    <button class="btn btn-success" (click)="validate($event)">Update Faculty</button>
+  </form>
+</div>
 
 
 

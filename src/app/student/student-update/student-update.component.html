@@ -1,28 +1,36 @@
 <button (click)="list()" class="btn btn-info "><< Back</button>
 <h5>Student Update Form</h5>
-<section class="mt-3">
+<section class="mt-3 ">
     <div class="container-fluid " [hidden]="submitted" style="width: 100%;">
-        <form (ngSubmit)="onSubmit()"  class="position-absolute top-50 start-50 translate-middle row">
+        <form (ngSubmit)="onSubmit()"  class="needs-validation position-absolute top-50 start-50 translate-middle row">
           <div class="col-sm">
             <div class="form-group custom-Forms">
                 <label for="name">Id.</label>
-                <input type="text" class="form-control" id="student-id" required [(ngModel)] ="student.studentId" name="student-id">
+                <input type="text" class="form-control" id="student-id" required [(ngModel)] ="student.studentId" name="student-id" disabled>
             </div>
             <div class="form-group custom-Forms">
                 <label for="name">Roll No.</label>
-                <input type="text" class="form-control" id="student-rollno" required [(ngModel)] ="student.rollNo" name="student-rollno">
+                <input type="text" class="form-control" id="student-rollno" required [(ngModel)] ="student.rollNo" name="student-rollno" pattern=".{3,8}">
+                <div class="valid-feedback">Valid .</div>
+                <div class="invalid-feedback">Invalid input - must be a number</div>
             </div>
             <div class="form-group custom-Forms">
                 <label for="name">Student First Name</label>
-                <input type="text" class="form-control" id="student-firstname" required [(ngModel)] ="student.firstName" name="student-firstname">
+                <input type="text" class="form-control" id="student-firstname" required [(ngModel)] ="student.firstName" name="student-firstname" pattern=".{3,30}">
+                <div class="valid-feedback">Valid .</div>
+                <div class="invalid-feedback">Invalid input - must be between 3 to 30 characters </div>
             </div>
             <div class="form-group custom-Forms">
                 <label for="name">Student Last Name</label>
-                <input type="text" class="form-control" id="student-lastname" required [(ngModel)] ="student.lastName" name="student-lastname">
+                <input type="text" class="form-control" id="student-lastname" required [(ngModel)] ="student.lastName" name="student-lastname" pattern=".{3,30}">
+                <div class="valid-feedback">Valid .</div>
+                <div class="invalid-feedback">Invalid input - must be between 3 to 30 characters </div>
             </div>
             <div class="form-group custom-Forms">
                 <label for="name">Date of Birth</label>
-                <input type="date" class="form-control" id="student-dob" required [(ngModel)]="student.dob" name="student-dob">
+                <input type="date" class="form-control" id="student-dob" required [(ngModel)]="student.dob" name="student-dob" min ="{{getDate()}}">
+                <div class="valid-feedback">Valid .</div>
+                <div class="invalid-feedback">Invalid input - must be past date </div>
             </div>
             <div class="form-group custom-Forms">
                 <label for="name">Gender</label>
@@ -36,35 +44,45 @@
                 <label class="form-check-label ml-3" for="student-gender">
                    Female
                 </label>
+                <div class="invalid-feedback">Invalid input - must select one </div>
             </div>
-            <div class="form-group custom-Forms">
-                <label for="student-course">Course</label>
-                <select id="student-course" class="form-control" required [(ngModel)]="student.courseName" name="student-course">
-                    <option selected value="" disabled>Choose...</option>
-                    <option value="mca">MCA</option>
-                    <option value="bca">BCA</option>
-                  </select>
-            </div>
+
         </div>
         <div class="col-sm">  
             <div class="form-group custom-Forms">
+                <label for="student-course">Course</label>
+                <select id="student-course" class="form-control" required [(ngModel)]="student.courseName" name="student-course">
+                    <option  *ngFor="let c of courses"  value="{{c.courseName}}" >{{c.courseName}}</option>
+                </select>
+                <div class="valid-feedback">Valid .</div>
+                <div class="invalid-feedback">Invalid input - must select one</div>
+            </div>
+            <div class="form-group custom-Forms">
                 <label for="name">Email</label>
-                <input type="email" class="form-control" id="student-email" required [(ngModel)]="student.emailId" name="student-email">
+                <input type="email" class="form-control" id="student-email" required [(ngModel)]="student.emailId" name="student-email" >
+                <div class="valid-feedback">Valid .</div>
+                <div class="invalid-feedback">Invalid input - must be valid email address</div>
             </div>
             <div class="form-group custom-Forms">
                 <label for="name">Mobile Number</label>
-                <input type="text" class="form-control" id="student-mobilenumber" required [(ngModel)]="student.mobileNo" name="student-mobilenumber">
+                <input type="text" class="form-control" id="student-mobilenumber" required [(ngModel)]="student.mobileNo" name="student-mobilenumber" pattern="[0-9]{10}">
+                <div class="valid-feedback">Valid .</div>
+                <div class="invalid-feedback">Invalid input - must be valid mobile number of 10 digits </div>
             </div>
             <div class="form-group custom-Forms">
                 <label for="name">Father's Mobile Number</label>
-                <input type="text" class="form-control" id="student-father-mobilenumber" required [(ngModel)]="student.fatherMobileNo" name="student-father-mobilenumber">
+                <input type="text" class="form-control" id="student-father-mobilenumber" required [(ngModel)]="student.fatherMobileNo" name="student-father-mobilenumber" pattern="[0-9]{10}">
+                <div class="valid-feedback">Valid .</div>
+                <div class="invalid-feedback">Invalid input - must be valid mobile number of 10 digits</div>
             </div>
             <div class="form-group custom-Forms">
                 <label for="name">Father's Email</label>
                 <input type="email" class="form-control" id="student-father-email" required [(ngModel)]="student.fatherEmailId" name="student-father-email">
+                <div class="valid-feedback">Valid .</div>
+                <div class="invalid-feedback">Invalid input - must be valid email address</div>
             </div>
             <div class="custom-button">
-                <button class="btn btn-success">Update</button>
+                <button class="btn btn-success" (click)="validate($event)">Create</button>
             </div>
         </div>
         </form>

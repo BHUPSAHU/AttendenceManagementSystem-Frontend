@@ -34,4 +34,17 @@ export class UpdateUserComponent implements OnInit {
     this.router.navigate(['user/list']);
   }
 
+  validate(event :Event){
+    var form = document.getElementsByClassName('needs-validation')[0] as HTMLFormElement;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    form.classList.add('was-validated');
+  }
+
+  getDate(){
+    let d = new Date();
+    return ((d.getFullYear()-4)+"/"+d.getMonth()+"/"+d.getDate());
+  }
 }

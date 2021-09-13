@@ -18,6 +18,7 @@ export class CourseUpdateComponent implements OnInit {
   course:Course = new Course(0,"","");
   courseObs : Observable<Course> = new Observable<Course>();
   cid:string =''
+  descLen = 0;
     constructor(private httpClientService:HttpCourseClientService,private route: ActivatedRoute,private router:Router) { }
   
     ngOnInit(): void {
@@ -43,5 +44,17 @@ export class CourseUpdateComponent implements OnInit {
       this.router.navigate(['course/list']);
     }
   
+    validate(event :Event){
+      var form = document.getElementsByClassName('needs-validation')[0] as HTMLFormElement;
+      if (form.checkValidity() === false) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add('was-validated');
+    }
+  
+    checkcount(){
+      this.descLen = this.course.description.length;
+    }
   }
   

@@ -19,7 +19,7 @@ export class CreateUserComponent implements OnInit {
  
   faculty:Faculty= new Faculty(0,"","");
   
-  user:User=new User(0,"","","","","","",1,0,this.faculty);
+  user:User=new User(0,"","","","","","",0,0,this.faculty);
   obsuser!:Observable<number>;
   addUserForm : FormGroup = new FormGroup({});
   submitted=false;
@@ -54,5 +54,17 @@ export class CreateUserComponent implements OnInit {
     this.router.navigate(['/user/list']);
     // }
   }
+  validate(event :Event){
+    var form = document.getElementsByClassName('needs-validation')[0] as HTMLFormElement;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    form.classList.add('was-validated');
+  }
 
+  getDate(){
+    let d = new Date();
+    return ((d.getFullYear()-4)+"/"+d.getMonth()+"/"+d.getDate());
+  }
 }

@@ -23,6 +23,7 @@ export class StudentCreateComponent implements OnInit {
   student :Student = new Student(0,0,"","",new Date,"","",0,"","","","","","");
   addStudentForm : FormGroup = new FormGroup({});
   studentObs :Observable<Student> = new Observable<Student>();
+  
   ngOnInit(): void
    {
     this.courseOb=this.serviceCourse.getCourse();
@@ -44,4 +45,17 @@ export class StudentCreateComponent implements OnInit {
     this.router.navigate(['/student/list']);
   }
 
+  validate(event :Event){
+    var form = document.getElementsByClassName('needs-validation')[0] as HTMLFormElement;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    form.classList.add('was-validated');
+  }
+
+  getDate(){
+    let d = new Date();
+    return ((d.getFullYear()-4)+"/"+d.getMonth()+"/"+d.getDate());
+  }
 }
