@@ -20,8 +20,8 @@
         <!-- <input type="text" class="form-control" id="subjectList" required [(ngModel)]="faculty.subjectId" name="subjectList"> -->
         <div class="row">
           <div class="col">
-            <select id="student-course" class="form-control" required name="student-course" [(ngModel)]="temp">
-              <option  *ngFor="let in of counter(10),let i=index"  value="{{i+1}}" >{{i+1}}</option>
+            <select id="student-course" class="form-control" required name="student-course" [(ngModel)]="tempIndex">
+              <option  *ngFor="let s of subjects,let i=index"  value="{{i}}" >{{s.subjectName}}</option>
             </select>
           </div>
           <div class="col">
@@ -29,8 +29,10 @@
           </div>
         </div>
         <div class="row mt-1 mb-1" style="width:50vw"> 
-            <div class=" border rounded col-sm-2 ml-2" style = " max-width:max-content ;" *ngFor="let item of courseArr,let i = index">
-              {{item}}<span class="btn" (click)="removeFromArray(i)" ><i class="bi bi-dash-circle-fill " style="color: red;"></i></span>
+            <div class=" border rounded col-sm-4 ml-2"  *ngFor="let item of subjectArr,let i = index">
+              <!-- {{item.subjectName}}
+              <span class="btn" (click)="removeFromArray(i)" ><i class="bi bi-dash-circle-fill " style="color: red;"></i></span> -->
+              {{item.subjectName}}<i class="bi bi-dash-circle-fill btn" (click)="removeFromArray(i)" style="color: red;"></i>
             </div>
         </div>
     </div>

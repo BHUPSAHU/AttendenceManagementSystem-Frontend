@@ -16,7 +16,7 @@ export class FacultyListComponent implements OnInit {
   facultys :Faculty[] = [];
   course:Course=new Course(0,"","");
   subject:Subject=new Subject(0,"","","","",0,this.course);
-  faculty:Faculty=new Faculty(0,"","",0,this.subject);
+  faculty:Faculty=new Faculty(0,"","",0,[]);
   Id:number=0;
 
   facultysObs:Observable<Faculty[]> = new Observable<Faculty[]>();

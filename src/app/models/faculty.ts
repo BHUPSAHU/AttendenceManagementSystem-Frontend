@@ -7,7 +7,7 @@ export class Faculty {
         public userName:string,
         public totalClass:string,
         public subjectId:number,
-        public subject:Subject
+        public subjectList:Subject[]
         
     ){
 

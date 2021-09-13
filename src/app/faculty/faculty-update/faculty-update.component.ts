@@ -17,7 +17,7 @@ export class FacultyUpdateComponent implements OnInit {
 submitted:boolean =false;
 course:Course=new Course(0,"","");
 subject:Subject=new Subject(0,"","","","",0,this.course);
-faculty:Faculty=new Faculty(0,"","",0,this.subject);
+faculty:Faculty=new Faculty(0,"","",0,[]);
 facultyObs : Observable<Faculty> = new Observable<Faculty>();
 sid:string =''
   //subject: string;
