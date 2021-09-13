@@ -11,6 +11,7 @@ import { HttpSubjectClientService } from 'src/app/services/http-subject-client.s
   styleUrls: ['./subject-list.component.css']
 })
 export class SubjectListComponent implements OnInit {
+  searchText:any;
   subjects:Subject[]=[];
   course:Course=new Course(0,"","");
   subject:Subject=new Subject(0,"","","","",0,this.course);

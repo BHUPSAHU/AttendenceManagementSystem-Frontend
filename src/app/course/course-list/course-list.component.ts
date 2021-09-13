@@ -12,7 +12,7 @@ import { HttpCourseClientService } from 'src/app/services/http-course-client.ser
   styleUrls: ['./course-list.component.css']
 })
 export class CourseListComponent implements OnInit {
-
+  searchText:any;
   courses :Course[] = [];
   course :Course = new Course(0,"","");
 
@@ -22,7 +22,7 @@ export class CourseListComponent implements OnInit {
   upCourseObs : Observable<Course> = new Observable<Course>();
 
   constructor(private httpClientService:HttpCourseClientService,private router:Router) { 
-
+ 
 
   }
   ngOnInit(): void {

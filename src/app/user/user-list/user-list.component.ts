@@ -10,6 +10,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
+  searchText:any;
   users:User[]=[];
   delUserObs:Observable<number>=new Observable<number>();
   constructor(private userservice:UserService,private router:Router) { }

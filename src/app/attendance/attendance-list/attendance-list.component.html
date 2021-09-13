@@ -1,7 +1,14 @@
 <h5>Attendance List</h5>
 <section>
     <div class="container-fluid ">
-        <table id="example" class="table table-striped table-bordered table-sm row-border hover" cellspacing="0" width="100%">
+      <div class="row">
+        <div class="search-course">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+          <input class="form-control "  type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching by Id, Name ">
+          
+        </div>  
+      <table id="example" class="table table-striped table-bordered table-sm row-border hover" cellspacing="0" width="100%">
             <thead>
               <tr>
                 <th >Id</th>
@@ -17,7 +24,7 @@
             </thead>
             <tbody>
               <tr *ngFor="let item of attendances|paginate: 
-              { itemsPerPage: 4, currentPage: p }">
+              { itemsPerPage: 4, currentPage:p} | filter:searchText">
                 <td>{{item.attendanceId}}</td>
                 <td>{{item.student.studentId}}</td>
                 <td>{{item.student.name}}</td>
@@ -38,4 +45,4 @@
             </tbody>
           </table>
     </div>
-</section>
+<!-- </section> -->
