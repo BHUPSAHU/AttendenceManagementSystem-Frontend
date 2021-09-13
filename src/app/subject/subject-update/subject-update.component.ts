@@ -45,7 +45,11 @@ export class SubjectUpdateComponent implements OnInit
   onSubmit() {
     console.log("update")
     this.submitted = true;
+
+    // this.subject.subjectCode=this.
+    
     this.subjectOb =this.service.updateSubject(this.subject);
+    console.log(this.subject);
     this.subjectOb.subscribe(data =>{
       alert("Subject Updated Successfully.")
     })

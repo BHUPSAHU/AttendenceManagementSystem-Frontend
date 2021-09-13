@@ -37,7 +37,7 @@ export class SubjectCreateComponent implements OnInit
   onSubmit() 
   {
     this.submitted = true;
-    this.subject.course.courseId=this.subject.courseId;
+   // this.subject.course.courseId=this.subject.courseId;
     console.log(this.subject);
     this.subjectOb =this.service.createSubject(this.subject);
     console.log(this.subject);
