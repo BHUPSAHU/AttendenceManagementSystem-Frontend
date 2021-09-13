@@ -23,11 +23,8 @@
 
       <div class="form-group custom-Forms">
         <label for="sel1" >Select Course:</label>
-        <select class="form-control" id="sel1" [(ngModel)]="subject.courseId" name="courseId">
-          <option>Select</option>
-          <option value="2">MCA</option>
-          <option value="3">MSC CS</option>
-
+        <select class="form-control"  id="sel1" [(ngModel)]="subject.courseId" name="courseId">
+          <option  *ngFor="let c of courses"  value="{{c.courseId}}" >{{c.courseName}}</option>
         </select>
       </div>
       <div class="form-group custom-Forms">

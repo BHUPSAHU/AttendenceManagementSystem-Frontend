@@ -14,17 +14,15 @@
             <div class="form-group custom-Forms">
                 <label for="name">SubjectName</label>
                 <select id="attendance-subjectname" class="form-control" required [(ngModel)]="attendance.subjectName" name="attendance-subjectname">
-                    <option selected value="" disabled>Choose...</option>
-                    <option value="java">JAVA</option>
-                    <option value="html">HTML</option>
+                    <option  *ngFor="let s of subjects"  value="{{s.subjectName}}" >{{s.subjectName}}</option>
+
                   </select>
             </div>
             <div class="form-group custom-Forms">
                 <label for="attendance-coursename">Course</label>
                 <select id="attendance-coursename" class="form-control" required [(ngModel)]="attendance.courseName" name="attendance-coursename">
-                    <option selected value="" disabled>Choose...</option>
-                    <option value="mca">MCA</option>
-                    <option value="bca">BCA</option>
+                    <option  *ngFor="let c of courses"  value="{{c.courseName}}" >{{c.courseName}}</option>
+
                   </select>
             </div>
 

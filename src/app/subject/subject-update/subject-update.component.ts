@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Course } from 'src/app/models/course';
 import { Subject } from 'src/app/models/subject';
+import { HttpCourseClientService } from 'src/app/services/http-course-client.service';
 import { HttpSubjectClientService } from 'src/app/services/http-subject-client.service';
 
 @Component({
@@ -14,14 +15,23 @@ export class SubjectUpdateComponent implements OnInit
  {
   id:number = 0 ;
   submitted:boolean =false;
+  courses:Course[]=[];
   course :Course=new Course(0,"","");
+  courseOb:Observable<Course[]>=new Observable<Course[]>();
+
   subject :Subject = new Subject(0,"","","","",0,this.course);
   subjectOb : Observable<Subject> = new Observable<Subject>();
   sid:string =''
-  constructor(private service:HttpSubjectClientService,private route: ActivatedRoute,private router:Router) { }
+  constructor(private service:HttpSubjectClientService,private route: ActivatedRoute,private router:Router,private serviceCourse:HttpCourseClientService) { }
 
   ngOnInit(): void
    {
+    this.courseOb=this.serviceCourse.getCourse();
+    this.courseOb.subscribe(data=>{
+      console.log(data)
+      this.courses=data;
+    });
+
     this.sid = this.route.snapshot.params['id'];
     this.id = Number.parseInt(this.sid);
     this.subject =new Subject(0,"","","","",0,this.course); 

@@ -21,7 +21,6 @@ import { CreateUserComponent } from './user/create-user/create-user.component';
 import { SubjectCreateComponent } from './subject/subject-create/subject-create.component';
 import { SubjectListComponent } from './subject/subject-list/subject-list.component';
 import { SubjectUpdateComponent } from './subject/subject-update/subject-update.component';
-import { SubjectByIdComponent } from './subject/subject-by-id/subject-by-id.component';
 import { CourseCreateComponent } from './course/course-create/course-create.component';
 import { CourseListComponent } from './course/course-list/course-list.component';
 import { CourseUpdateComponent } from './course/course-update/course-update.component';
@@ -52,7 +51,6 @@ import {NgxPaginationModule} from 'ngx-pagination';
     SubjectCreateComponent,
     SubjectListComponent,
     SubjectUpdateComponent,
-    SubjectByIdComponent,
     CourseCreateComponent,
     CourseListComponent,
     CourseUpdateComponent,

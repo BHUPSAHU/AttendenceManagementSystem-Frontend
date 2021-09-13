@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { Course } from 'src/app/models/course';
 import { Student } from 'src/app/models/student';
+import { HttpCourseClientService } from 'src/app/services/http-course-client.service';
 import { HttpStudentClientService } from 'src/app/services/http-student-client.service';
 
 @Component({
@@ -12,13 +14,22 @@ import { HttpStudentClientService } from 'src/app/services/http-student-client.s
 })
 export class StudentCreateComponent implements OnInit {
 
-  constructor(private httpClientService:HttpStudentClientService,private router:Router) { }
+  constructor(private httpClientService:HttpStudentClientService,private router:Router,private serviceCourse:HttpCourseClientService) { }
   submitted:boolean = false;
+  courses:Course[]=[];
+  course:Course=new Course(0,"","");
+  courseOb:Observable<Course[]>=new Observable<Course[]>();
+
   student :Student = new Student(0,0,"","",new Date,"","",0,"","","","","","");
   addStudentForm : FormGroup = new FormGroup({});
   studentObs :Observable<Student> = new Observable<Student>();
-  ngOnInit(): void {
-
+  ngOnInit(): void
+   {
+    this.courseOb=this.serviceCourse.getCourse();
+    this.courseOb.subscribe(data=>{
+      console.log(data)
+      this.courses=data;
+    });
   }
   onSubmit() {
     this.submitted = true;

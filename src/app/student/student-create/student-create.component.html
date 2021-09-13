@@ -35,9 +35,8 @@
             <div class="form-group custom-Forms">
                 <label for="student-course">Course</label>
                 <select id="student-course" class="form-control" required [(ngModel)]="student.courseName" name="student-course">
-                    <option selected value="" disabled>Choose...</option>
-                    <option value="mca">MCA</option>
-                    <option value="bca">BCA</option>
+                    <option  *ngFor="let c of courses"  value="{{c.courseName}}" >{{c.courseName}}</option>
+
                   </select>
             </div>
         </div>
