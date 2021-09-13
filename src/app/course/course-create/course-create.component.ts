@@ -14,6 +14,7 @@ import { Course } from 'src/app/models/course';
 })
 export class CourseCreateComponent implements OnInit {
 
+  
   constructor(private service:HttpCourseClientService,private router:Router) { }
   submitted:boolean=false;
   course:Course=new Course(0,"","");
@@ -26,8 +27,8 @@ export class CourseCreateComponent implements OnInit {
   onSubmit() 
   {
     this.submitted = true;
-    this.course.courseId=1;
-     this.course.courseName ="Java";
+    // this.course.courseId=1;
+    //  this.course.courseName ="Java";
   //  this.subject.course.courseId=this.subject.courseId;
      console.log(this.course);
     this.courseOb =this.service.createCourse(this.course);

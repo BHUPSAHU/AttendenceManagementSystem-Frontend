@@ -11,7 +11,7 @@ import { HttpAttendanceClientService } from 'src/app/services/http-attendance-cl
   styleUrls: ['./attendance-list.component.css']
 })
 export class AttendanceListComponent implements OnInit {
-  
+  searchText:any;
   
   attendances :Attendance[] = [];
   student :Student = new Student(0,0,"","",new Date,"","",0,"","","","","","");

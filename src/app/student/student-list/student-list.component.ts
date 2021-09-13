@@ -10,6 +10,7 @@ import { HttpStudentClientService } from 'src/app/services/http-student-client.s
   styleUrls: ['./student-list.component.css']
 })
 export class StudentListComponent implements OnInit {
+  searchText:any;
   students :Student[] = [];
   student :Student = new Student(0,0,"","",new Date,"","",0,"","","","","","");
 

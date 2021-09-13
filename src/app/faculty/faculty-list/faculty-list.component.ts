@@ -12,6 +12,7 @@ import { HttpFacultyClientService } from 'src/app/services/http-faculty-client.s
   styleUrls: ['./faculty-list.component.css']
 })
 export class FacultyListComponent implements OnInit {
+  searchText:any;
   facultys :Faculty[] = [];
   course:Course=new Course(0,"","");
   subject:Subject=new Subject(0,"","","","",0,this.course);

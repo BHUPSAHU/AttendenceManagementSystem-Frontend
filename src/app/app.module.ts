@@ -31,6 +31,9 @@ import { StudentLoginComponent } from './student/student-login/student-login.com
 import { StudentProfileComponent } from './student/student-profile/student-profile.component';
 
 import {NgxPaginationModule} from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
+
 
 @NgModule({
   declarations: [
@@ -67,8 +70,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-  
-    NgxPaginationModule
+    NgxPaginationModule,
+    Ng2SearchPipeModule
 
   ],
   providers: [],
