@@ -13,15 +13,15 @@
     
         <div class="form-group custom-Forms">
           <label for="sid">Subject Code:</label>
-          <input type="text" class="form-control" [(ngModel)]="subject.subjectCode" id="scode" placeholder="Enter Subject Code" name="scode" required pattern=".{3,30}">
+          <input type="text" class="form-control" [(ngModel)]="subject.subjectCode" id="scode" placeholder="Enter Subject Code" name="scode" required pattern=".{3,10}">
           <div class="valid-feedback">Valid .</div>
-          <div class="invalid-feedback">Invalid input - must be a number between 3 to 5 digits </div>
+          <div class="invalid-feedback">Invalid input - must be a  between 3 to 10 characters </div>
         </div>
     
       <div class="form-group custom-Forms">
             <label for="sem">Semester:</label>
             <!-- <input type="text" class="form-control"  [(ngModel)]="subject.semester" id="sem" placeholder="Enter Semester" name="sem"> -->
-            <select id="sem" class="form-control" required [(ngModel)]="subject.semester" name="sem" placeholder="Select Semester"  pattern=".{3,}">
+            <select id="sem" class="form-control" required [(ngModel)]="subject.semester" name="sem" placeholder="Select Semester" >
               <option  *ngFor="let in of counter(10),let i=index"  value="Semester-{{i+1}}" >Semester-{{i+1}}</option>
           </select>
           <div class="valid-feedback">Valid .</div>
@@ -32,7 +32,7 @@
     
           <div class="form-group custom-Forms">
             <label for="sel1" >Select Course:</label>
-            <select class="form-control"  id="sel1" [(ngModel)]="subject.courseId" name="courseId" >
+            <select class="form-control"  id="sel1" [(ngModel)]="subject.course.courseId" name="courseId" >
               <option  *ngFor="let c of courses"  value="{{c.courseId}}" >{{c.courseName}}</option>
             </select>
             <div class="valid-feedback">Valid .</div>

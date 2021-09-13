@@ -11,5 +11,6 @@
   }
   .form-control::placeholder  {
     font-family: FontAwesome;
+    font-size: large;
   }
   
