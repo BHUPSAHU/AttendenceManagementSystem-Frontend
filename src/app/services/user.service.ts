@@ -33,4 +33,8 @@ export class UserService {
   public getUserById(uid:number):Observable<User>{
     return this.http.get<User>(`${this.apiUrl}/byId/${uid}`);
   }
+
+  public getUserByMobile(mobile :string):Observable<User>{
+    return this.http.get<User>(`${this.apiUrl}/byMobile/${mobile}`);
+  }
 }
