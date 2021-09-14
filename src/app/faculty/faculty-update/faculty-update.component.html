@@ -1,7 +1,7 @@
 <h3>Update Faculty</h3>
 
-<div [hidden]="submitted" style="width: 400px;">
-  <form (ngSubmit)="onSubmit()" class="needs-validation">
+<div [hidden]="submitted" style="width: 400px;" class="row">
+  <form (ngSubmit)="onSubmit()" class="needs-validation col-sm">
     
     <div class="form-group">
       <label for="name">UserName</label>
@@ -13,16 +13,37 @@
       <label for="name">TotalClasses</label>
       <input type="text" class="form-control" id="totalClass" required [(ngModel)]="faculty.totalClass" name="totalClass" pattern=".{3,10}">
       <div class="valid-feedback">Valid .</div>
-      <div class="invalid-feedback">Invalid input - must be between 3 to 10 characters </div>
+                <div class="invalid-feedback">Invalid input - must be between 3 to 10 characters </div>
     </div>
-    <!-- <div class="form-group">
+    <div class="form-group">
         <label for="name">SubjectList</label>
-        <input type="text" class="form-control" id="subjectList" required [(ngModel)]="faculty.subjectId" name="subjectList">
-      </div>
-     -->
+        <!-- <input type="text" class="form-control" id="subjectList" required [(ngModel)]="faculty.subjectId" name="subjectList"> -->
+        <div class="row">
+          <div class="col">
+            <select id="student-course" class="form-control" required name="student-course" [(ngModel)]="tempIndex">
+              <option  *ngFor="let s of subjects,let i=index"  value="{{i}}" >{{s.subjectName}}</option>
+            </select>
+          </div>
+          <div class="col">
+            <div class="btn-info rounded-circle" style="width: max-content;" (click)="addToArray()" ><i class="bi bi-plus-circle-dotted " ></i></div>
+          </div>
+        </div>
+        <div class="row mt-1 mb-1" style="width:50vw"> 
+            <div class=" border rounded col-sm-4 ml-2"  *ngFor="let item of subjectArr,let i = index">
+              <!-- {{item.subjectName}}
+              <span class="btn" (click)="removeFromArray(i)" ><i class="bi bi-dash-circle-fill " style="color: red;"></i></span> -->
+              {{item.subjectName}}<i class="bi bi-dash-circle-fill btn" (click)="removeFromArray(i)" style="color: red;"></i>
+            </div>
+        </div>
+    </div>
+    
     <button class="btn btn-success" (click)="validate($event)">Update Faculty</button>
   </form>
+
 </div>
+
+
+
 
 
 

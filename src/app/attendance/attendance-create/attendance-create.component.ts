@@ -1,3 +1,4 @@
+import { newArray } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -8,6 +9,7 @@ import { Student } from 'src/app/models/student';
 import { Subject } from 'src/app/models/subject';
 import { HttpAttendanceClientService } from 'src/app/services/http-attendance-client.service';
 import { HttpCourseClientService } from 'src/app/services/http-course-client.service';
+import { HttpStudentClientService } from 'src/app/services/http-student-client.service';
 import { HttpSubjectClientService } from 'src/app/services/http-subject-client.service';
 
 
@@ -19,8 +21,12 @@ import { HttpSubjectClientService } from 'src/app/services/http-subject-client.s
 export class AttendanceCreateComponent implements OnInit {
   
   
-  constructor(private httpClientService:HttpAttendanceClientService,private router:Router,private serviceCourse:HttpCourseClientService,private service:HttpSubjectClientService) { }
+  constructor(private httpClientService:HttpAttendanceClientService,private httpStudentService:HttpStudentClientService,private router:Router,private serviceCourse:HttpCourseClientService,private service:HttpSubjectClientService) { }
   submitted:boolean = false;
+
+  rollNo:number =0;
+  id:number = 0 ;
+  sid:string =''
 
   courses:Course[]=[];
   course:Course=new Course(0,"","");
@@ -30,11 +36,12 @@ export class AttendanceCreateComponent implements OnInit {
   subject:Subject=new Subject(0,"","","","",0,this.course);
   subjectObs:Observable<Subject[]> = new Observable<Subject[]>();
  
+  students:Student[]=[];
   student :Student = new Student(0,0,"","",new Date,"","",0,"","","","","","");
   attendance :Attendance = new Attendance(0,0,this.student,"","",0,"",new Date,"",0,0,"");
   addAttendanceForm : FormGroup = new FormGroup({});
   attendanceObs :Observable<Attendance> = new Observable<Attendance>();
-  studentObs :Observable<Attendance> = new Observable<Attendance>();
+  studentObs :Observable<Student[]> = new Observable<Student[]>();
 
   ngOnInit(): void 
   {
@@ -49,6 +56,11 @@ export class AttendanceCreateComponent implements OnInit {
       this.subjects=data;
     });
 
+    this.studentObs=this.httpStudentService.getStudent();
+    this.studentObs.subscribe(data=>{
+      this.students=data;
+    });
+
   }
 
   onSubmit() {
@@ -57,7 +69,7 @@ export class AttendanceCreateComponent implements OnInit {
     this.attendance.student.studentId = this.attendance.studentId;
     console.log(this.attendance);
     this.attendanceObs =this.httpClientService.attendanceCreate(this.attendance);
-    
+    location.reload();
     this.attendanceObs.subscribe(data =>{
       console.log(data);
       alert("Student Added Successfully.")
@@ -65,5 +77,23 @@ export class AttendanceCreateComponent implements OnInit {
     this.router.navigate(['/attendance/list']);
   }
 
+  loadStudent(){
+    this.id = this.attendance.studentId;
+    this.student =new Student(this.id,0,"","",new Date,"","",0,"","","","","",""); 
+    this.httpStudentService.getStudentById(this.id).subscribe(data =>{
+      console.log(data);
+      this.student=data;
+      this.attendance.courseName = this.student.courseName;
+      this.attendance.studentId = this.student.studentId;
+    },error => console.log(error));
+  }
 
+
+  counter(i : number){
+    return new Array(i);
+  }
+
+  calculatePercentage(){
+    this.attendance.percentage = Math.round(this.attendance.total/(Number.parseInt(this.attendance.totalClass))*100)+"%";
+  }
 }

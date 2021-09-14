@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Faculty } from 'src/app/models/faculty.model';
+import { Faculty } from 'src/app/models/faculty';
+
 import { User } from 'src/app/models/user.model';
+import { HttpFacultyClientService } from 'src/app/services/http-faculty-client.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -15,16 +17,22 @@ export class UpdateUserComponent implements OnInit {
   id!:number;
   user!:User;
   updUser!:Observable<number>;
-  faculty:Faculty=new Faculty(0,"","");
+  faculty:Faculty=new Faculty(0,"","",0,[]);
+  obsFaculty:Observable<Faculty[]> = new Observable<Faculty[]>();
+  faculties:Faculty[] =[];
   submitted=false;
-  constructor(private userService:UserService,private router:Router,private activatedRoute:ActivatedRoute) { }
+  constructor(private userService:UserService,private router:Router,private activatedRoute:ActivatedRoute,private facultyService:HttpFacultyClientService) { }
 
   ngOnInit(): void {
       this.uid=this.activatedRoute.snapshot.params['id'];
       this.id=Number.parseInt(this.uid);
       this.user=new User(0,"","","","","","",1,0,this.faculty);
       this.userService.getUserById(this.id).subscribe(data=>this.user=data,error=>console.log(error));
-
+     
+      this.obsFaculty = this.facultyService.getFaculty();
+      this.obsFaculty.subscribe(data =>{
+        this.faculties = data;
+      })
   }
 
   onSubmit(){
