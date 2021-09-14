@@ -20,6 +20,10 @@ export class HttpStudentClientService {
     return this.httpClient.get<Student>( `${this.baseUrl}byId/${id}`);
   }
 
+  public getStudentRoll(roll:number):Observable<Student>{
+    return this.httpClient.get<Student>( `${this.baseUrl}byRoll/${roll}`);
+  }
+
   public getStudentByName(name:string):Observable<Student>{
     return this.httpClient.get<Student>( `${this.baseUrl}byName/${name}`);
   }

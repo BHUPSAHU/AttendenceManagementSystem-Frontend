@@ -34,8 +34,9 @@ export class CreateUserComponent implements OnInit {
   obsuser!:Observable<number>;
   addUserForm : FormGroup = new FormGroup({});
   submitted=false;
-  obsFaculty!:Observable<Faculty[]>;
-
+  // obsFaculty!:Observable<Faculty[]>;
+  obsFaculty:Observable<Faculty[]> = new Observable<Faculty[]>();
+  faculties:Faculty[]=[];
 
   constructor(private userService:UserService,private router:Router,private facultyService:HttpFacultyClientService,private authService:AuthService) { }
 
@@ -44,6 +45,10 @@ export class CreateUserComponent implements OnInit {
       this.obsFaculty.subscribe((data)=>this.facultyList=data,error=>console.log(error));
 
       console.log(this.faculty);
+      this.obsFaculty = this.facultyService.getFaculty();
+      this.obsFaculty.subscribe(data =>{
+        this.faculties = data;
+      })
   } 
 
 
@@ -59,13 +64,21 @@ export class CreateUserComponent implements OnInit {
       this.userRole="faculty"
     }
 
-    this.authService.register(username,email,password,this.userRole);
+    this.authService.register(username,email,password);
       this.user.assignfaculty.facultyid =this.user.facultyId;  
       this.user.email=email;
+      this.user.profilePic ="assets/images/Profile13.png"
     this.obsuser=this.userService.addUser(this.user);
     console.log(this.user);
-    this.obsuser.subscribe(data=>alert('user got created'),error=>console.log(error));
+    alert('above user got created');
+    this.obsuser.subscribe(data=>{
+      alert('user got created');
+      console.log("added");
+  });
     this.router.navigate(['/user/list']);
+    setTimeout(()=>{
+      location.reload()
+    },500);
   }
   validate(event :Event){
     var form = document.getElementsByClassName('needs-validation')[0] as HTMLFormElement;

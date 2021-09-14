@@ -1,11 +1,15 @@
 
-<app-header></app-header>
+<app-main-login *ngIf="logStatus == 'false'"></app-main-login>
 
-<app-mid-body></app-mid-body>
+
+<app-header></app-header>
+<section *ngIf="logStatus == 'true'">
+<app-mid-body *ngIf=" getUserType() == 'user' "></app-mid-body>
 <div class="container-fluid row mt-5 mb-5 ml-5" style="width: 80vw; ">
-    <app-sub-menu></app-sub-menu>
+    <app-sub-menu *ngIf=" getUserType() == 'user' "></app-sub-menu>
     <div class="container-fluid rounded" style="width: 60vw; ">
         <router-outlet></router-outlet>
     </div>
     <app-footer></app-footer>
 </div>
+</section>

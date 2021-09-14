@@ -49,5 +49,8 @@ export class UserListComponent implements OnInit {
     this.router.navigate(['user/update',eid]);
   }
 
+  viewUser(id :number){
+    this.router.navigate(['user/profile',id]);
+  }
 
 }

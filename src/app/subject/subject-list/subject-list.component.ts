@@ -41,9 +41,10 @@ export class SubjectListComponent implements OnInit {
       this.subject = data
     })
     this.delSubjectObs= this.service.deleteSubject(id);
-    alert("Subject deleted successfully");
+    
     location.reload();
     this.delSubjectObs.subscribe(()=>{
+      alert("Subject deleted successfully");
       this.service.getSubject();
     });
   }

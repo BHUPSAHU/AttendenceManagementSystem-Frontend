@@ -33,6 +33,10 @@ import { StudentProfileComponent } from './student/student-profile/student-profi
 import {NgxPaginationModule} from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { LoginComponent } from './auth/login/login.component';
+import { CookieService } from 'ngx-cookie-service';
+import { UserProfileComponent } from './user/user-profile/user-profile.component';
+import { MainLoginComponent } from './elements/main-login/main-login.component';
+
 
 
 
@@ -64,6 +68,8 @@ import { LoginComponent } from './auth/login/login.component';
     StudentLoginComponent,
     StudentProfileComponent,
     LoginComponent,
+    UserProfileComponent,
+    MainLoginComponent
 
   ],
   imports: [
@@ -76,7 +82,7 @@ import { LoginComponent } from './auth/login/login.component';
     Ng2SearchPipeModule
 
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
