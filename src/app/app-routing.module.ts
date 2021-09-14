@@ -21,11 +21,14 @@ import { SubjectUpdateComponent } from './subject/subject-update/subject-update.
 import { CourseCreateComponent } from './course/course-create/course-create.component';
 import { CourseListComponent } from './course/course-list/course-list.component';
 import { CourseUpdateComponent } from './course/course-update/course-update.component';
+import { StudentProfileComponent } from './student/student-profile/student-profile.component';
+import { UserProfileComponent } from './user/user-profile/user-profile.component';
 
 const routes: Routes = [
   {path:"student/add" , component:StudentCreateComponent},
   {path:"student/list" , component:StudentListComponent},
   {path:"student/update/:id" , component:StudentUpdateComponent},
+  {path:"student/profile/:id" , component:StudentProfileComponent},
 
   {path:"faculty/add" , component:FacultyCreateComponent},
   {path:"faculty/list" , component:FacultyListComponent},
@@ -35,6 +38,8 @@ const routes: Routes = [
   { path:'user/create', component: CreateUserComponent},
   { path: 'user/update/:id' , component:UpdateUserComponent},
   { path:'user/list',component:UserListComponent},
+  { path: 'user/profile/:id' , component:UserProfileComponent},
+
   {path:"subject/add",component:SubjectCreateComponent},
   {path:"subject/list",component:SubjectListComponent},
   {path:"subject/update/:id",component:SubjectUpdateComponent},

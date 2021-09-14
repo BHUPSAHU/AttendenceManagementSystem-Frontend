@@ -39,15 +39,20 @@ export class StudentListComponent implements OnInit {
       this.student = data
     })
     this.delStudentObs= this.httpClientService.deleteStudent(id);
-    alert("Student deleted successfully");
+    
     location.reload();
     this.delStudentObs.subscribe(()=>{
+      alert("Student deleted successfully");
       this.httpClientService.getStudent();
     });
   }
 
   updateStudent(id :number):void{
     this.router.navigate(['student/update',id]);
+  }
+
+  viewStudent(id:number):void{
+    this.router.navigate(['student/profile',id])
   }
 
 }

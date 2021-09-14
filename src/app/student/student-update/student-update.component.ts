@@ -40,6 +40,11 @@ sid:string =''
     console.log("update")
     this.submitted = true;
     this.studentObs =this.httpClientService.updateStudent(this.student);
+    if(this.student.gender == "male"){
+      this.student.profilePic ="assets/images/Profile6.png"
+    }else{
+      this.student.profilePic ="assets/images/Profile11.png"
+    }
     this.studentObs.subscribe(data =>{
       alert("Student Updated Successfully.")
     })

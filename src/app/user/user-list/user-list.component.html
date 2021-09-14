@@ -27,8 +27,10 @@
                     <td>{{user.lastName}}</td>
                     <td>{{user.mobileNo}}</td>
                     <!-- <td>{{user.dob}}</td> -->
-                    <td><button class="btn btn-danger" (click)="deleteUser(user.userId)" >Delete</button>
+                    <td>
+                        <button class="btn btn-danger" (click)="deleteUser(user.userId)" >Delete</button>
                         <button class="btn btn-success" (click)="updateUser(user.userId)" style="margin-left: 10px;">Update</button>
+                        <button class="btn btn-info" (click)="viewUser(user.userId)" style="margin-left: 10px;">View Profile</button>
                     </td>
                 </tr>
                 <tr>

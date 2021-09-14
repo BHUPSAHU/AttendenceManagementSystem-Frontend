@@ -1,4 +1,5 @@
-import { Faculty } from "./faculty.model";
+import { Faculty } from "./faculty";
+
 
 export class User {
     constructor(

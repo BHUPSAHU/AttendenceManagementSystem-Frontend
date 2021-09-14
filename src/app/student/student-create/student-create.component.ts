@@ -35,7 +35,12 @@ export class StudentCreateComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     this.student.courseId=101;
-    this.student.profilePic ="pic Path 1234567891"
+    if(this.student.gender == "male"){
+      this.student.profilePic ="assets/images/Profile6.png"
+    }else{
+      this.student.profilePic ="assets/images/Profile11.png"
+    }
+
     this.studentObs =this.httpClientService.createStudent(this.student);
     console.log(this.student);
     this.studentObs.subscribe(data =>{

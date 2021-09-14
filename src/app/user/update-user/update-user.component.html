@@ -56,7 +56,9 @@
             <div class="form-group">
                 <label for="facultyId">Faculty id
                 </label>
-                    <input type="number" class="form-control" [(ngModel)]="user.facultyId" name="facultyId" id="facultyId">
+                <select id="facultyId" class="form-control" required [(ngModel)]="user.facultyId" name="facultyId">
+                    <option  *ngFor="let f of faculties"  value="{{f.facultyid}}" >{{f.userName}}</option>
+                </select>
                     <div class="valid-feedback">Valid .</div>
                     <div class="invalid-feedback">Invalid input - must select one</div>
             </div>

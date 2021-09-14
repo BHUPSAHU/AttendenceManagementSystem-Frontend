@@ -27,7 +27,9 @@
                 <td>{{item.gender}}</td> 
                 <td>{{item.courseName}}</td>
                 <td>{{item.emailId}}</td>           
-                  <td><button style='margin-right:16px' (click)="deleteStudent(item.studentId)" class="btn btn-danger">Delete</button>
+                  <td>
+                    <button style='margin-right:16px' (click)="viewStudent(item.studentId)" class="btn btn-info">View Profile</button>
+                    <button style='margin-right:16px' (click)="deleteStudent(item.studentId)" class="btn btn-danger">Delete</button>
                     <button style='margin-right:16px' (click)="updateStudent(item.studentId)" class="btn btn-success" style="margin-left: 10px">Update</button>
                   </td>
               </tr>
