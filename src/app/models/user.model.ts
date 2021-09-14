@@ -1,4 +1,4 @@
-import { Faculty } from "./faculty.model";
+import { Faculty } from "./faculty";
 
 export class User {
     constructor(
@@ -8,7 +8,7 @@ export class User {
         public mobileNo:string,
         public profilePic:string,
         public dob:string,
-        public password:string,
+        public email:string,
         public roleType:number,
         public facultyId:number,
         public assignfaculty:Faculty

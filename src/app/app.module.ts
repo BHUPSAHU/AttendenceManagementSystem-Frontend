@@ -32,6 +32,7 @@ import { StudentProfileComponent } from './student/student-profile/student-profi
 
 import {NgxPaginationModule} from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { LoginComponent } from './auth/login/login.component';
 
 
 
@@ -62,6 +63,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     AttendanceUpdateComponent,
     StudentLoginComponent,
     StudentProfileComponent,
+    LoginComponent,
 
   ],
   imports: [

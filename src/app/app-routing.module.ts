@@ -21,6 +21,7 @@ import { SubjectUpdateComponent } from './subject/subject-update/subject-update.
 import { CourseCreateComponent } from './course/course-create/course-create.component';
 import { CourseListComponent } from './course/course-list/course-list.component';
 import { CourseUpdateComponent } from './course/course-update/course-update.component';
+import { LoginComponent } from './auth/login/login.component';
 
 const routes: Routes = [
   {path:"student/add" , component:StudentCreateComponent},
@@ -43,8 +44,8 @@ const routes: Routes = [
   {path:"attendance/update/:id" , component:AttendanceUpdateComponent},
   {path:"course/add" , component:CourseCreateComponent},
   {path:"course/list" , component:CourseListComponent},
-  {path:"course/update/:id" , component:CourseUpdateComponent}
-    
+  {path:"course/update/:id" , component:CourseUpdateComponent},
+    {path:"login",component:LoginComponent}
 ];
 
 @NgModule({

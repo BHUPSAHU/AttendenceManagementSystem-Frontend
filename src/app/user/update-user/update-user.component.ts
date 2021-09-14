@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Faculty } from 'src/app/models/faculty.model';
+import { Course } from 'src/app/models/course';
+import { Faculty } from 'src/app/models/faculty';
+import { Subject } from 'src/app/models/subject';
 import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
 
@@ -15,7 +17,10 @@ export class UpdateUserComponent implements OnInit {
   id!:number;
   user!:User;
   updUser!:Observable<number>;
-  faculty:Faculty=new Faculty(0,"","");
+  facultyList:Faculty[]= [];  
+  course:Course=new Course(0,"","");
+  subject:Subject=new Subject(0,"","","","",0,this.course);
+  faculty:Faculty=new Faculty(0,"","",0,[])
   submitted=false;
   constructor(private userService:UserService,private router:Router,private activatedRoute:ActivatedRoute) { }
 
