@@ -12,4 +12,7 @@ export class SubMenuComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getUserRole(){
+    return sessionStorage.getItem('userRole');
+  }
 }

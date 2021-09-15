@@ -1,12 +1,12 @@
 <div class="tab-content" id="v-pills-tabContent">
-    <div class="tab-pane fade show active" id="v-pills-user" role="tabpanel" aria-labelledby="v-pills-user-tab">
+    <div class="tab-pane fade show active" *ngIf="getUserRole() == 'admin'"  id="v-pills-user" role="tabpanel" aria-labelledby="v-pills-user-tab">
         <h3>Users</h3>
         <div class="nav flex-column nav-pills"  role="tablist" aria-orientation="vertical" >
             <a class="nav-link pointer active"  data-toggle="pill"  aria-selected="true" routerLink="user/create">Create New</a>
             <a class="nav-link pointer"  data-toggle="pill"   aria-selected="false" routerLink="user/list">Show List</a>
         </div>
     </div>
-    <div class="tab-pane fade" id="v-pills-course" role="tabpanel" aria-labelledby="v-pills-course-tab">
+    <div class="tab-pane fade" *ngIf="getUserRole() == 'admin'"  id="v-pills-course" role="tabpanel" aria-labelledby="v-pills-course-tab">
         
         <h3>Course</h3>
         <div class="nav flex-column nav-pills"  role="tablist" aria-orientation="vertical">
@@ -16,7 +16,7 @@
 
 
     </div>
-    <div class="tab-pane fade" id="v-pills-subject" role="tabpanel" aria-labelledby="v-pills-subject-tab">
+    <div class="tab-pane fade" *ngIf="getUserRole() == 'admin'"  id="v-pills-subject" role="tabpanel" aria-labelledby="v-pills-subject-tab">
         <h3>Subject</h3>
         <div class="nav flex-column nav-pills"  role="tablist" aria-orientation="vertical">
             <div class="nav flex-column nav-pills"  role="tablist" aria-orientation="vertical">
@@ -25,7 +25,7 @@
             </div>
         </div>
     </div>
-    <div class="tab-pane fade" id="v-pills-faculty" role="tabpanel" aria-labelledby="v-pills-faculty-tab">
+    <div class="tab-pane fade" *ngIf="getUserRole() == 'admin'"  id="v-pills-faculty" role="tabpanel" aria-labelledby="v-pills-faculty-tab">
         <h3>Faculty</h3>
         <div class="nav flex-column nav-pills"  role="tablist" aria-orientation="vertical">
             <a class="nav-link pointer active"  data-toggle="pill"  aria-selected="true" routerLink="faculty/add">Create New</a>

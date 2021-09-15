@@ -69,19 +69,26 @@ export class AttendanceCreateComponent implements OnInit {
     this.attendance.student.studentId = this.attendance.studentId;
     console.log(this.attendance);
     this.attendanceObs =this.httpClientService.attendanceCreate(this.attendance);
-    location.reload();
+    // location.reload();
 
     this.attendanceObs.subscribe(data =>{
       console.log(data);
       alert("Student Added Successfully.")
     })
-    alert("Student after Added Successfully.")
-    // this.router.navigate(['/attendance/list']);
-    // setTimeout(()=>{
-    //   location.reload();
-    // },500)
+    this.router.navigate(['/attendance/list']);
+    setTimeout(()=>{
+      location.reload();
+    },500)
   }
 
+  validate(event :Event){
+    var form = document.getElementsByClassName('needs-validation')[0] as HTMLFormElement;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    form.classList.add('was-validated');
+  }
   loadStudent(){
     this.id = this.attendance.studentId;
     this.student =new Student(this.id,0,"","",new Date,"","",0,"","","","","",""); 
