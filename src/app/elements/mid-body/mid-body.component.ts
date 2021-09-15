@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-mid-body',
   templateUrl: './mid-body.component.html',
@@ -12,4 +13,8 @@ export class MidBodyComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  getUserRole(){
+    return sessionStorage.getItem('userRole');
+  }
 }

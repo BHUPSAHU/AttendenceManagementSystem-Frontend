@@ -46,6 +46,9 @@ export class SubjectCreateComponent implements OnInit
       alert("Subject Added Successfully.")
     })
     this.router.navigate(['/subject/list']);
+    setTimeout(()=>{
+      location.reload();
+    },500)
   }
   
   validate(event :Event){

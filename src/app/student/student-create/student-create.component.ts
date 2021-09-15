@@ -48,6 +48,9 @@ export class StudentCreateComponent implements OnInit {
       alert("Student Added Successfully.")
     })
     this.router.navigate(['/student/list']);
+    setTimeout(()=>{
+      location.reload();
+    },500)
   }
 
   validate(event :Event){

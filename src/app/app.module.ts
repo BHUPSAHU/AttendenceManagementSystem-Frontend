@@ -36,6 +36,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { CookieService } from 'ngx-cookie-service';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
 import { MainLoginComponent } from './elements/main-login/main-login.component';
+import { HomeComponent } from './elements/home/home.component';
 
 
 
@@ -69,7 +70,8 @@ import { MainLoginComponent } from './elements/main-login/main-login.component';
     StudentProfileComponent,
     LoginComponent,
     UserProfileComponent,
-    MainLoginComponent
+    MainLoginComponent,
+    HomeComponent
 
   ],
   imports: [

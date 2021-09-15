@@ -44,6 +44,9 @@ export class UpdateUserComponent implements OnInit {
     this.updUser=this.userService.updateUser(this.user);
     this.updUser.subscribe(data=>alert("user got updated successfully"),error=>console.log(error));
     this.router.navigate(['user/list']);
+    setTimeout(()=>{
+      location.reload();
+    },500)
   }
 
   validate(event :Event){

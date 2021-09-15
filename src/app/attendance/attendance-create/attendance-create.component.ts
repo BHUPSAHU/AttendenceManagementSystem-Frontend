@@ -70,11 +70,16 @@ export class AttendanceCreateComponent implements OnInit {
     console.log(this.attendance);
     this.attendanceObs =this.httpClientService.attendanceCreate(this.attendance);
     location.reload();
+
     this.attendanceObs.subscribe(data =>{
       console.log(data);
       alert("Student Added Successfully.")
     })
-    this.router.navigate(['/attendance/list']);
+    alert("Student after Added Successfully.")
+    // this.router.navigate(['/attendance/list']);
+    // setTimeout(()=>{
+    //   location.reload();
+    // },500)
   }
 
   loadStudent(){

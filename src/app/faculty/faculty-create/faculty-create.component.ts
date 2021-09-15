@@ -47,6 +47,9 @@ export class FacultyCreateComponent implements OnInit {
       alert("faculty Added Successfully.")
     })
     this.router.navigate(['/faculty/list']);
+    setTimeout(()=>{
+      location.reload();
+    },500)
   }
 
   validate(event :Event){

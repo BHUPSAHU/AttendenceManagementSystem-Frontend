@@ -58,7 +58,7 @@ export class MainLoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
-        this.router.navigate(['user/list']);
+        this.router.navigate(['home']);
         sessionStorage.setItem('logStatus', 'true');
         sessionStorage.setItem('userType',"user");
         setTimeout(()=>{

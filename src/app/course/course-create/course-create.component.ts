@@ -40,6 +40,9 @@ export class CourseCreateComponent implements OnInit {
       alert("Course Added Successfully.")
     })
     this.router.navigate(['/course/list']);
+    setTimeout(()=>{
+      location.reload();
+    },500)
   }
 
   validate(event :Event){

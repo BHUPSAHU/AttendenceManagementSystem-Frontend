@@ -38,6 +38,9 @@ export class CourseUpdateComponent implements OnInit {
         alert("Course Updated Successfully.")
       })
       this.router.navigate(['course/list']);
+      setTimeout(()=>{
+        location.reload();
+      },500)
     } 
   
     list(){

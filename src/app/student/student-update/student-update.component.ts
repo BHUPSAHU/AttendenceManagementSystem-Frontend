@@ -49,6 +49,9 @@ sid:string =''
       alert("Student Updated Successfully.")
     })
     this.router.navigate(['student/list']);
+    setTimeout(()=>{
+      location.reload();
+    },500)
   } 
 
   list(){

@@ -70,7 +70,7 @@ export class CreateUserComponent implements OnInit {
       this.user.profilePic ="assets/images/Profile13.png"
     this.obsuser=this.userService.addUser(this.user);
     console.log(this.user);
-    alert('above user got created');
+    // alert('above user got created');
     this.obsuser.subscribe(data=>{
       alert('user got created');
       console.log("added");

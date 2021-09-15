@@ -24,8 +24,13 @@ import { CourseUpdateComponent } from './course/course-update/course-update.comp
 import { LoginComponent } from './auth/login/login.component';
 import { StudentProfileComponent } from './student/student-profile/student-profile.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
+import { HomeComponent } from './elements/home/home.component';
 
 const routes: Routes = [
+  { path:'',redirectTo:'home',pathMatch:'full'},
+
+  {path:"home",component:HomeComponent},
+
   {path:"student/add" , component:StudentCreateComponent},
   {path:"student/list" , component:StudentListComponent},
   {path:"student/update/:id" , component:StudentUpdateComponent},
@@ -35,7 +40,6 @@ const routes: Routes = [
   {path:"faculty/list" , component:FacultyListComponent},
   {path:"faculty/update/:id" , component:FacultyUpdateComponent},
 
-  { path:'',redirectTo:'user/list',pathMatch:'full'},
   { path:'user/create', component: CreateUserComponent},
   { path: 'user/update/:id' , component:UpdateUserComponent},
   { path:'user/list',component:UserListComponent},
@@ -50,7 +54,8 @@ const routes: Routes = [
   {path:"course/add" , component:CourseCreateComponent},
   {path:"course/list" , component:CourseListComponent},
   {path:"course/update/:id" , component:CourseUpdateComponent},
-    {path:"login",component:LoginComponent}
+  {path:"login",component:LoginComponent},
+
 ];
 
 @NgModule({

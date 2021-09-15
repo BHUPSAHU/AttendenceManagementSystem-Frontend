@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 
 const AUTH_API = 'http://localhost:9090/api/auth/';
 
+
+
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -15,7 +17,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(username: string, password: string): Observable<any> {
-    console.log("enetered login");
+    console.log("entered login");
     return this.http.post(AUTH_API + 'signin', {
       username,
       password

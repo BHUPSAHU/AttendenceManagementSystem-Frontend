@@ -30,7 +30,7 @@ export class UserProfileComponent implements OnInit {
         this.role = "Admin";
       }
     },error => console.log(error));
-    alert();
+ 
   }
 
 }

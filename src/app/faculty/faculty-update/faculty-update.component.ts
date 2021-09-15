@@ -51,6 +51,9 @@ sid:string =''
       alert("Faculty Updated Successfully.")
     })
     this.router.navigate(['faculty/list']);
+    setTimeout(()=>{
+      location.reload();
+    },500)
   } 
 
   list(){

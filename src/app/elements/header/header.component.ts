@@ -41,6 +41,13 @@ export class HeaderComponent implements OnInit {
       sessionStorage.setItem('userId', `${this.userLogged.userId}`);
       sessionStorage.setItem('userName', this.userLogged.firstName);
       sessionStorage.setItem('userProfilePic', this.userLogged.profilePic);
+      if(this.userLogged.roleType ==1){
+        sessionStorage.setItem('userRole','admin')
+      }
+      else if(this.userLogged.roleType ==2){
+        sessionStorage.setItem('userRole','faculty')
+      }
+      
     },error=>console.log(error));
     console.log("user details fetch are " +this.userLogged);
     console.log(this.userLogged);

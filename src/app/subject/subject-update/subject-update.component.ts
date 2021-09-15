@@ -54,6 +54,9 @@ export class SubjectUpdateComponent implements OnInit
       alert("Subject Updated Successfully.")
     })
     this.router.navigate(['subject/list']);
+    setTimeout(()=>{
+      location.reload();
+    },500)
   } 
 
   list(){
